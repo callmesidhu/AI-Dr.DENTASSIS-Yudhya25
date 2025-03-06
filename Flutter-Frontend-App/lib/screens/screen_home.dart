@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_frontend/screens/screen_add_patient.dart';
 import 'package:flutter_frontend/screens/screen_patient_details.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -108,24 +109,24 @@ class ScreenHome extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () { Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => ScreenPatientDetails(
-      name: 'Vaishnavi',
-      diagnosis: 'Deep Dental Caries',
-      age: 20,
-      phone: '987654321',
-      dob: '20/02/2022',
-      chiefComplaint: 'The patient complains of tooth pain jiwoegjoiejgioejigeioejiojgeioj',
-      medicalHistory: 'No history of diabetes or hypertension...sji ewjiogjeiogj ieojgiejigjeo giej giejg ejgi ejogjeg eigj eogjeojge',
-      provisionalDiagnosis: 'Deep dental caries... j eoijg iejgieej iojww jwjeoijwj gwjewj gjij j ijojweij ie gjgjejoiwg ewio jg wejigojw oi gjwoijgoijw gjweoijwgoijgpi wejoi joiwjwegje wejwewjeewjew9uhjeiuewhiuhewiu iewh',
-      treatmentPlan: 'Root canal treatment, restoration... w igjeiu ghewi hgiuehiugwheiu h giu hwiuehewu9gh98u3w9heh g8eu30u30uu4u09w09iu0w njn s jifn wiosj ewjo owfj ewo wsiogj oejgweioj gg ig iwj wegoj wegj weojeoigwj  gjwoiwj geogeij ',
-      oralHygieneAdvice: 'Brush twice daily, floss regularly... joioge joiwje iojeogjjegoje iogejigjioegjiojegioejgo jewoejijiojeiojgioejojoewijgi ojwoijoegwjiogjow jowj jweoj ogwjo',
-    ),
-  ),
-);
- },
-                        child: Padding(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ScreenPatientDetails(
+                                name: 'Vaishnavi',
+                                diagnosis: 'Deep Dental Caries',
+                                age: 20,
+                                phone: '987654321',
+                                dob: '20/02/2022',
+                                chiefComplaint: 'The patient complains of tooth pain jiwoegjoiejgioejigeioejiojgeioj',
+                                medicalHistory: 'No history of diabetes or hypertension...sji ewjiogjeiogj ieojgiejigjeo giej giejg ejgi ejogjeg eigj eogjeojge',
+                                provisionalDiagnosis: 'Deep dental caries... j eoijg iejgieej iojww jwjeoijwj gwjewj gjij j ijojweij ie gjgjejoiwg ewio jg wejigojw oi gjwoijgoijw gjweoijwgoijgpi wejoi joiwjwegje wejwewjeewjew9uhjeiuewhiuhewiu iewh',
+                                treatmentPlan: 'Root canal treatment, restoration... w igjeiu ghewi hgiuehiugwheiu h giu hwiuehewu9gh98u3w9heh g8eu30u30uu4u09w09iu0w njn s jifn wiosj ewjo owfj ewo wsiogj oejgweioj gg ig iwj wegoj wegj weojeoigwj  gjwoiwj geogeij ',
+                                oralHygieneAdvice: 'Brush twice daily, floss regularly... joioge joiwje iojeogjjegoje iogejigjioegjiojegioejgo jewoejijiojeiojgioejojoewijgi ojwoijoegwjiogjow jowj jweoj ogwjo',
+                              ),
+                            ),
+                          );
+                          },
+                                                  child: Padding(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
                             vertical: 8,
@@ -160,8 +161,11 @@ class ScreenHome extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
                 onPressed: () {
-                  // TODO: Implement "Add Patient" logic here
-                  print("ADD PATIENT button pressed");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ScreenAddPatient()),
+                  );
+
                 },
                 child: const Text("ADD PATIENT"),
               ),
