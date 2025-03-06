@@ -40,29 +40,68 @@ class ScreenPatientDetails extends StatelessWidget {
             children: [
               // Top Row: Title + "DELETE THIS PATIENT" button
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                    icon: const Icon(Icons.arrow_back, size: 28),
+                    onPressed: () {
+                      Navigator.pop(context); // Navigate back
+                    },
+                  ),
+                      const Text(
                     "PATIENT DETAILS",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
+                    
+                  ),SizedBox(height: 35, width: 1)],
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                      foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                    ),
-                    onPressed: () {
-                      // TODO: Implement delete logic
-                      print("DELETE THIS PATIENT pressed!");
-                    },
-                    child: const Text("DELETE THIS PATIENT"),
-                  ),
+                   Padding(
+                     padding: const EdgeInsets.fromLTRB(2, 0 , 0, 0),
+                     child: Positioned(
+                      top: 20, 
+                      right: 8,
+                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      
+                      children: [
+                        SizedBox(
+                          height: 10,
+                          width: 1,
+                        ),
+                         ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                          foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                        ),
+                        onPressed: () {
+                          // TODO: Implement delete logic
+                          print("DELETE THIS PATIENT pressed!");
+                        },
+                        child: const Text("DELETE THIS PATIENT"),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 205, 64, 64),
+                          foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                        ),
+                        onPressed: () {
+                          // TODO: Implement delete logic
+                          print("DELETE THIS PATIENT pressed!");
+                        },
+                        child: const Text("DIAGNOSE THIS PATIENT"),
+                      ),
+                      ],
+                     ),
+                                      ),
+                   )
                 ],
               ),
-              const SizedBox(height: 16),
+              
 
               // Patient Information
               _buildSectionHeader("Patient Information"),
