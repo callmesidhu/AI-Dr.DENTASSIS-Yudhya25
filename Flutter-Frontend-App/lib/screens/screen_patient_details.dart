@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_frontend/screens/screen_start_diagnosis.dart';
 
 class ScreenPatientDetails extends StatelessWidget {
   // Sample fields. Replace with actual data or make them dynamic as needed.
@@ -79,7 +80,7 @@ class ScreenPatientDetails extends StatelessWidget {
                           foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                         ),
                         onPressed: () {
-                          // TODO: Implement delete logic
+                       
                           print("DELETE THIS PATIENT pressed!");
                         },
                         child: const Text("DELETE THIS PATIENT"),
@@ -90,8 +91,14 @@ class ScreenPatientDetails extends StatelessWidget {
                           foregroundColor: const Color.fromARGB(255, 255, 255, 255),
                         ),
                         onPressed: () {
-                          // TODO: Implement delete logic
-                          print("DELETE THIS PATIENT pressed!");
+                          
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ScreenStartDiagnosis(),
+                            ),
+                          );
+
                         },
                         child: const Text("DIAGNOSE THIS PATIENT"),
                       ),
