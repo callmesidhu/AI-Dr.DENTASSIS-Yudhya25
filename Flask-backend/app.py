@@ -1,9 +1,9 @@
-from flask import Flask, session, redirect, url_for, render_template
+from flask import Flask, session, redirect, url_for
 from configs.config import Config
 from flask_dance.contrib.google import make_google_blueprint, google
 from flask_dance.consumer import oauth_authorized
 from routes.auth import auth_bp
-from models.user import db
+from models.docter import db
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -35,11 +35,6 @@ def index():
     if "user" in session:
         return f"Hello, {session['user']['email']}! <a href='/logout'>Logout</a>"
     return 'Welcome! Please <a href="/login/google">login with Google</a>.'
-
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect(url_for("index"))
 
 @oauth_authorized.connect_via(google_bp)
 def google_logged_in(blueprint, token):

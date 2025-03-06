@@ -1,7 +1,7 @@
 # routes.py
 from flask import Blueprint, redirect, url_for, session, flash
 from flask_dance.contrib.google import google
-from models.user import db, User
+from models.docter import db, User
 
 auth_bp = Blueprint("auth", __name__)
 
