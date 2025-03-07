@@ -4,9 +4,11 @@ from flask_dance.contrib.google import make_google_blueprint, google
 from flask_dance.consumer import oauth_authorized
 from routes.auth import auth_bp
 from models.docter import db
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
 app.config.from_object(Config)
+CORS(app)
 
 # Initialize SQLAlchemy with the app
 db.init_app(app)
